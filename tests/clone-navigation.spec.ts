@@ -25,6 +25,42 @@ test.describe('Captured navigation', () => {
     ).toBeVisible()
   })
 
+  test('desktop submenu opens from the keyboard via its toggle', async ({ page, isMobile }) => {
+    test.skip(!!isMobile, 'Desktop layout only; the mobile overlay shows submenus expanded.')
+    await page.goto('/')
+
+    // The block is "open on hover and click", which core excludes from its
+    // :focus-within rule, so the toggle button is the only keyboard path.
+    // Its runtime was stripped by the capture; clone-enhance restores it.
+    const toggle = page.getByRole('button', { name: 'Events submenu' })
+    const submenuLinks = page.locator('.wp-block-navigation__submenu-container a')
+
+    await expect(toggle).toHaveAttribute('aria-expanded', 'false')
+    await expect(submenuLinks.first()).toBeHidden()
+
+    await toggle.focus()
+    await page.keyboard.press('Enter')
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true')
+    await expect(submenuLinks.first()).toBeVisible()
+    expect(await submenuLinks.count()).toBeGreaterThan(1)
+
+    // Tab reaches the submenu's links while it is open.
+    await page.keyboard.press('Tab')
+    await expect(submenuLinks.first()).toBeFocused()
+
+    // Escape closes it and returns focus to the toggle.
+    await page.keyboard.press('Escape')
+    await expect(toggle).toHaveAttribute('aria-expanded', 'false')
+    await expect(submenuLinks.first()).toBeHidden()
+    await expect(toggle).toBeFocused()
+
+    // Tabbing away from an open submenu closes it rather than leaving it hanging.
+    await page.keyboard.press('Enter')
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true')
+    await page.keyboard.press('Shift+Tab')
+    await expect(toggle).toHaveAttribute('aria-expanded', 'false')
+  })
+
   test('mobile hamburger opens and closes the overlay menu', async ({ page, isMobile }) => {
     test.skip(!isMobile, 'Mobile layout only.')
     await page.goto('/')
