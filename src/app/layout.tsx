@@ -15,7 +15,6 @@ import {
   cinzel,
 } from '@/lib/fonts'
 import { siteMetadata } from '@/lib/siteMetadata'
-import { assetPath } from '@/lib/assetPath'
 import { CONSENT_MODE_BOOTSTRAP } from '@/lib/consent-mode'
 
 export const metadata = siteMetadata
@@ -55,14 +54,6 @@ export default function RootLayout({
         {/* Preconnect to external domains for faster resource loading */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-
-        {/* Preload critical LCP image */}
-        <link
-          rel="preload"
-          as="image"
-          href={assetPath('/Images/figma-hero-img.webp')}
-          fetchPriority="high"
-        />
 
         {/*
           Google Consent Mode v2 defaults. MUST come before <GoogleTagManager />
