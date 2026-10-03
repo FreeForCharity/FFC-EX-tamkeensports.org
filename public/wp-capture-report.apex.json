@@ -1,0 +1,294 @@
+{
+  "domain": "tamkeensports.org",
+  "mount": "",
+  "capturedAt": "2026-10-02T21:32:53.864Z",
+  "restRoot": "https://tamkeensports.org/wp-json/",
+  "restFlavor": "pretty",
+  "inventory": {
+    "restPages": 11,
+    "restPosts": 0,
+    "restRefusals": [],
+    "sitemapSource": "/wp-sitemap.xml",
+    "sitemapPageUrls": 13,
+    "addedBySitemap": 2,
+    "merged": 13
+  },
+  "captured": {
+    "total": 13,
+    "byType": {
+      "page": 11,
+      "sitemap": 2
+    },
+    "bySource": {
+      "rest": 11,
+      "sitemap": 2
+    }
+  },
+  "frontPageCaptured": true,
+  "offSiteRedirects": [],
+  "strandedNav": {},
+  "pages": {
+    "captured": 11,
+    "reported": 11
+  },
+  "posts": {
+    "captured": 0,
+    "reported": 0
+  },
+  "media": {
+    "reported": 28,
+    "collectionStatus": 200,
+    "available": true
+  },
+  "assets": {
+    "downloaded": 99,
+    "failed": 1,
+    "failures": {
+      "total": 1,
+      "byStatus": {
+        "404": 1
+      },
+      "byHost": {
+        "tamkeensports.org": 1
+      },
+      "sample": [
+        "HTTP 404 https://tamkeensports.org/wp-content/plugins/pagelayer/css/owl.video.play.png"
+      ]
+    }
+  },
+  "pageFetch": {
+    "failed": 0,
+    "failures": {
+      "total": 0,
+      "byStatus": {},
+      "byHost": {},
+      "sample": []
+    }
+  },
+  "declaredSelfHost": null,
+  "deWordPressed": {
+    "runtime": "clone-enhance.js",
+    "scriptTagsRemoved": 161,
+    "distinctScriptsRemoved": 19,
+    "inlineScriptsRemoved": 124,
+    "waypointHidingRulesRemoved": 0,
+    "headLinksRemoved": 139
+  },
+  "imageOptimization": {
+    "enabledPdfs": true,
+    "shrinkAllPdfs": false,
+    "maxPdfMb": 90,
+    "pdfsShrunk": 0,
+    "pdfsDeclined": 0,
+    "pdfsSkippedNoEncoder": 0,
+    "pdfsStillOverBudget": [],
+    "pdfBytesBefore": 0,
+    "pdfBytesAfter": 0,
+    "enabled": true,
+    "recodeAll": false,
+    "encoderAvailable": null,
+    "maxImageKb": 400,
+    "recoded": 0,
+    "declined": 0,
+    "skippedNoEncoder": 0,
+    "stillOverBudget": 0,
+    "collisions": 0,
+    "disambiguated": 0,
+    "nameCollisionsAvoided": 3,
+    "deadFontFaceRulesRemoved": 0,
+    "deadFontFaceSourcesRemoved": 0,
+    "bytesBefore": 0,
+    "bytesAfter": 0
+  },
+  "remainingExternalHosts": [],
+  "escapedPaths": [],
+  "ignoreHosts": [],
+  "forms": {
+    "pageCount": 3,
+    "pages": [
+      {
+        "localPath": "join/index.html",
+        "forms": 1,
+        "plugin": false
+      },
+      {
+        "localPath": "contact/index.html",
+        "forms": 1,
+        "plugin": false
+      },
+      {
+        "localPath": "index.html",
+        "forms": 1,
+        "plugin": false
+      }
+    ],
+    "truncated": 0,
+    "contactEmailsFound": [
+      "info@tamkeensports.org"
+    ]
+  },
+  "entries": [
+    {
+      "id": 446,
+      "type": "page",
+      "slug": "dfw-calendar",
+      "link": "https://tamkeensports.org/dfw-calendar/",
+      "title": "DFW Calendar",
+      "localPath": "dfw-calendar/index.html",
+      "parent": 0,
+      "menuOrder": 0,
+      "source": "rest",
+      "bytes": 75779
+    },
+    {
+      "id": 443,
+      "type": "page",
+      "slug": "dfw-events",
+      "link": "https://tamkeensports.org/dfw-events/",
+      "title": "DFW Events",
+      "localPath": "dfw-events/index.html",
+      "parent": 0,
+      "menuOrder": 0,
+      "source": "rest",
+      "bytes": 103646
+    },
+    {
+      "id": 401,
+      "type": "page",
+      "slug": "league",
+      "link": "https://tamkeensports.org/league/",
+      "title": "League",
+      "localPath": "league/index.html",
+      "parent": 0,
+      "menuOrder": 0,
+      "source": "rest",
+      "bytes": 82890
+    },
+    {
+      "id": 319,
+      "type": "page",
+      "slug": "chicago-calendar",
+      "link": "https://tamkeensports.org/chicago-calendar/",
+      "title": "Chicago Calendar",
+      "localPath": "chicago-calendar/index.html",
+      "parent": 0,
+      "menuOrder": 0,
+      "source": "rest",
+      "bytes": 75860
+    },
+    {
+      "id": 215,
+      "type": "page",
+      "slug": "refund-policy",
+      "link": "https://tamkeensports.org/refund-policy/",
+      "title": "Refund Policy",
+      "localPath": "refund-policy/index.html",
+      "parent": 0,
+      "menuOrder": 0,
+      "source": "rest",
+      "bytes": 80026
+    },
+    {
+      "id": 209,
+      "type": "page",
+      "slug": "join",
+      "link": "https://tamkeensports.org/join/",
+      "title": "Join Our Team",
+      "localPath": "join/index.html",
+      "parent": 0,
+      "menuOrder": 0,
+      "source": "rest",
+      "bytes": 99416
+    },
+    {
+      "id": 109,
+      "type": "page",
+      "slug": "events",
+      "link": "https://tamkeensports.org/events/",
+      "title": "CHI Events",
+      "localPath": "events/index.html",
+      "parent": 0,
+      "menuOrder": 0,
+      "source": "rest",
+      "bytes": 263598
+    },
+    {
+      "id": 81,
+      "type": "page",
+      "slug": "donate",
+      "link": "https://tamkeensports.org/donate/",
+      "title": "Donate",
+      "localPath": "donate/index.html",
+      "parent": 0,
+      "menuOrder": 0,
+      "source": "rest",
+      "bytes": 83197
+    },
+    {
+      "id": 37,
+      "type": "page",
+      "slug": "about",
+      "link": "https://tamkeensports.org/about/",
+      "title": "About Us",
+      "localPath": "about/index.html",
+      "parent": 0,
+      "menuOrder": 0,
+      "source": "rest",
+      "bytes": 80509
+    },
+    {
+      "id": 36,
+      "type": "page",
+      "slug": "contact",
+      "link": "https://tamkeensports.org/contact/",
+      "title": "Contact",
+      "localPath": "contact/index.html",
+      "parent": 0,
+      "menuOrder": 6,
+      "source": "rest",
+      "bytes": 85750
+    },
+    {
+      "id": 35,
+      "type": "page",
+      "slug": "home",
+      "link": "https://tamkeensports.org/",
+      "title": "Home",
+      "localPath": "index.html",
+      "parent": 0,
+      "menuOrder": 0,
+      "source": "rest",
+      "bytes": 109981
+    },
+    {
+      "id": null,
+      "type": "sitemap",
+      "slug": "",
+      "link": "https://tamkeensports.org/category/uncategorized/",
+      "title": "",
+      "localPath": "category/uncategorized/index.html",
+      "parent": 0,
+      "menuOrder": 0,
+      "source": "sitemap",
+      "bytes": 47254
+    },
+    {
+      "id": null,
+      "type": "sitemap",
+      "slug": "",
+      "link": "https://tamkeensports.org/tag/badminton/",
+      "title": "",
+      "localPath": "tag/badminton/index.html",
+      "parent": 0,
+      "menuOrder": 0,
+      "source": "sitemap",
+      "bytes": 47219
+    }
+  ],
+  "verdict": {
+    "ok": false,
+    "problems": [
+      "assets: 1 failed (1×HTTP 404); 1 of them on tamkeensports.org"
+    ]
+  }
+}
