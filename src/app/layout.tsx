@@ -27,7 +27,10 @@ const contentSecurityPolicy = [
   "img-src 'self' data: blob: https:",
   "font-src 'self' data:",
   "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://stats.g.doubleclick.net https://connect.facebook.net https://www.facebook.com https://www.clarity.ms https://*.clarity.ms",
-  'frame-src https://www.googletagmanager.com',
+  // calendar.google.com: the captured Chicago and DFW calendar pages embed a
+  // Google Calendar iframe (reported by the 706 converter as an external frame
+  // host). Keep this list aligned with public/_headers.
+  'frame-src https://www.googletagmanager.com https://calendar.google.com',
   "media-src 'self' blob: https:",
   "object-src 'none'",
   "base-uri 'self'",

@@ -197,7 +197,7 @@ export default function FfcFooter() {
 
         {/* Said in words, because "Supported by" alone has been read as
             ownership. This is an FFC-EX site: the charity is its own
-            organization and Free For Charity gives it a website. The line
+            organization and the supporting org gives it a website. The line
             renders only when there is NO asserted parent -- a site that
             genuinely is a project of an umbrella org must not claim to be
             independent, and the "A project of" clause above already states

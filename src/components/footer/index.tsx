@@ -102,7 +102,8 @@ const Footer: React.FC = () => {
               // the ids the home page really renders, so a dead link added here
               // fails the suite instead of shipping.
               { name: 'Home', href: '/' },
-              { name: 'Team', href: '/#team' },
+              // No `/#team`: the captured tamkeensports.org home page has no
+              // team section, so that template link resolved to nothing.
               // Giving and volunteering pathways. Each is a single link, not a
               // page section: the configured URL, or an email to the charity
               // when none is set (see donateHref / volunteerHref).
