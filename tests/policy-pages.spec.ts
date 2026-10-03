@@ -21,21 +21,20 @@ const policyPages = [
   },
 ]
 
-// Footer policy links use "Free For Charity" prefix and map to specific routes.
-// With trailingSlash enabled, Next.js Link renders hrefs with trailing slashes.
+// This site ships the FFC attribution footer (src/components/ffc-footer),
+// whose policy links are labelled by page name, with FFC's own policy
+// abbreviated to "FFC Donation Policy". With trailingSlash enabled, Next.js
+// Link renders hrefs with trailing slashes.
 const footerPolicyLinks = [
-  { name: 'Free For Charity Donation Policy', href: '/free-for-charity-donation-policy/' },
+  { name: 'FFC Donation Policy', href: '/free-for-charity-donation-policy/' },
   // The charity's own donation policy. Matched with exact names below so this
-  // does not also match "Free For Charity Donation Policy".
+  // does not also match "FFC Donation Policy".
   { name: 'Donation Policy', href: '/donation-policy/' },
-  { name: `${testConfig.site.name} Privacy Policy`, href: '/privacy-policy/' },
-  { name: `${testConfig.site.name} Cookie Policy`, href: '/cookie-policy/' },
-  { name: `${testConfig.site.name} Terms of Service`, href: '/terms-of-service/' },
-  {
-    name: `${testConfig.site.name} Vulnerability Disclosure Policy`,
-    href: '/vulnerability-disclosure-policy/',
-  },
-  { name: `${testConfig.site.name} Security Acknowledgement`, href: '/security-acknowledgements/' },
+  { name: 'Privacy Policy', href: '/privacy-policy/' },
+  { name: 'Cookie Policy', href: '/cookie-policy/' },
+  { name: 'Terms of Service', href: '/terms-of-service/' },
+  { name: 'Vulnerability Disclosure', href: '/vulnerability-disclosure-policy/' },
+  { name: 'Security Acknowledgements', href: '/security-acknowledgements/' },
 ]
 
 test.describe('Policy pages', () => {

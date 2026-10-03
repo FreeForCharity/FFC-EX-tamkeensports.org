@@ -39,12 +39,19 @@ test.describe('Footer-only template', () => {
     await expect(page.locator('#team').getByRole('heading', { level: 3 })).toHaveCount(team.length)
   })
 
+  // This site ships the FFC attribution footer (src/components/ffc-footer),
+  // not the template's three-column marketing footer: the captured pages keep
+  // their own visual footer, and the strip below it carries the attribution
+  // and policy links. Assert that footer's contract, not the template's
+  // "Quick Links" / "Contact Us" headings, which it never renders.
   test('should render the Footer', async ({ page }) => {
     await page.goto('/')
 
-    await expect(page.locator('footer')).toBeVisible()
-    await expect(page.getByRole('heading', { name: 'Quick Links' })).toBeVisible()
-    await expect(page.getByRole('heading', { name: 'Contact Us' })).toBeVisible()
+    const footer = page.locator('footer')
+    await expect(footer).toBeVisible()
+    await expect(footer.getByRole('link', { name: 'Supported Charity Login' })).toBeVisible()
+    await expect(footer.getByRole('link', { name: 'Privacy Policy', exact: true })).toBeVisible()
+    await expect(footer.getByText('Supported by')).toBeVisible()
   })
 
   test('should render a home page with a single top-level heading', async ({ page }) => {
