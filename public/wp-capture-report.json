@@ -1,7 +1,7 @@
 {
   "domain": "tamkeensports.org",
   "mount": "",
-  "capturedAt": "2026-10-02T21:32:53.864Z",
+  "capturedAt": "2026-10-04T13:13:40.104Z",
   "restRoot": "https://tamkeensports.org/wp-json/",
   "restFlavor": "pretty",
   "inventory": {
@@ -150,7 +150,7 @@
       "parent": 0,
       "menuOrder": 0,
       "source": "rest",
-      "bytes": 103646
+      "bytes": 107878
     },
     {
       "id": 401,
@@ -210,7 +210,7 @@
       "parent": 0,
       "menuOrder": 0,
       "source": "rest",
-      "bytes": 263598
+      "bytes": 268355
     },
     {
       "id": 81,
@@ -246,7 +246,7 @@
       "parent": 0,
       "menuOrder": 6,
       "source": "rest",
-      "bytes": 85750
+      "bytes": 85749
     },
     {
       "id": 35,
