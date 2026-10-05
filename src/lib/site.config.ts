@@ -178,7 +178,7 @@ export const siteConfig: SiteConfig = {
   // so. Switch to https://tamkeensports.org in the same PR that adds the CNAME.
   url: 'https://freeforcharity.github.io',
   twitterHandle: '',
-  contactEmail: 'info@tamkeensports.org',
+  contactEmail: 'tamkeenchicago@gmail.com',
   keywords: [
     'nonprofit',
     'women-only sports',
