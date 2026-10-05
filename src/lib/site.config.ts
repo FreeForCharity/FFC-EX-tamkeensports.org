@@ -173,10 +173,9 @@ export const siteConfig: SiteConfig = {
     'Tamkeen Sports is a nonprofit organization dedicated to women-only sports events for women and girls. We provide a welcoming space where women can stay active, connect with others, and support meaningful causes.',
   shortDescription:
     'Women-only sports events where women can stay active, build community, and support meaningful causes.',
-  // No public/CNAME yet: the site is served on the default GitHub Pages
-  // origin until the DNS cutover, and check-drift requires the config to say
-  // so. Switch to https://tamkeensports.org in the same PR that adds the CNAME.
-  url: 'https://freeforcharity.github.io',
+  // public/CNAME names this host, so the deploy serves the site at the root of
+  // the custom domain with no base path; check-drift requires the two to agree.
+  url: 'https://tamkeensports.org',
   twitterHandle: '',
   contactEmail: 'tamkeenchicago@gmail.com',
   keywords: [
