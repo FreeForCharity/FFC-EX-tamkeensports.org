@@ -85,8 +85,14 @@ describe('manifest and Lighthouse parity', () => {
   test('Lighthouse audits the same parity pages as the full template', () => {
     const lighthouserc = JSON.parse(readFileSync(join(process.cwd(), 'lighthouserc.json'), 'utf8'))
 
+    // The template's parity set, plus the two captured content pages workflow
+    // 706 retargeted Lighthouse at for this site (a calendar page with the
+    // Google Calendar embed, and the about page) so the audit covers the
+    // charity's own markup and not only the template's policy pages.
     expect(lighthouserc.ci.collect.url).toEqual([
       'http://localhost/index.html',
+      'http://localhost/chicago-calendar/index.html',
+      'http://localhost/about/index.html',
       'http://localhost/cookie-policy/',
       'http://localhost/privacy-policy/',
       'http://localhost/terms-of-service/',

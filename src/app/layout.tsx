@@ -1,5 +1,6 @@
 import './globals.css'
-import Footer from './../components/footer'
+import Footer from './../components/ffc-footer'
+import CloneEnhance from './../components/clone-enhance'
 import CookieConsent from './../components/cookie-consent'
 import GoogleTagManager, { GoogleTagManagerNoScript } from './../components/google-tag-manager'
 import { siteConfig } from '@/lib/site.config'
@@ -14,7 +15,6 @@ import {
   cinzel,
 } from '@/lib/fonts'
 import { siteMetadata } from '@/lib/siteMetadata'
-import { assetPath } from '@/lib/assetPath'
 import { CONSENT_MODE_BOOTSTRAP } from '@/lib/consent-mode'
 
 export const metadata = siteMetadata
@@ -26,7 +26,10 @@ const contentSecurityPolicy = [
   "img-src 'self' data: blob: https:",
   "font-src 'self' data:",
   "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://stats.g.doubleclick.net https://connect.facebook.net https://www.facebook.com https://www.clarity.ms https://*.clarity.ms",
-  'frame-src https://www.googletagmanager.com',
+  // calendar.google.com: the captured Chicago and DFW calendar pages embed a
+  // Google Calendar iframe (reported by the 706 converter as an external frame
+  // host). Keep this list aligned with public/_headers.
+  'frame-src https://www.googletagmanager.com https://calendar.google.com',
   "media-src 'self' blob: https:",
   "object-src 'none'",
   "base-uri 'self'",
@@ -51,14 +54,6 @@ export default function RootLayout({
         {/* Preconnect to external domains for faster resource loading */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-
-        {/* Preload critical LCP image */}
-        <link
-          rel="preload"
-          as="image"
-          href={assetPath('/Images/figma-hero-img.webp')}
-          fetchPriority="high"
-        />
 
         {/*
           Google Consent Mode v2 defaults. MUST come before <GoogleTagManager />
@@ -91,6 +86,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         {/* <PopupProvider> */}
+        <CloneEnhance />
         {children}
         <Footer />
         <CookieConsent />

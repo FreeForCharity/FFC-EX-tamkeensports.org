@@ -1,0 +1,67 @@
+.ffc-clone /*
+Theme Name: Twenty Twenty-Five
+Theme URI: https://wordpress.org/themes/twentytwentyfive/
+Author: the WordPress team
+Author URI: https://wordpress.org
+Description: Twenty Twenty-Five emphasizes simplicity and adaptability. It offers flexible design options, .ffc-clone supported by a variety of patterns for different page types, .ffc-clone such as services and landing pages, .ffc-clone making it ideal for building personal blogs, .ffc-clone professional portfolios, .ffc-clone online magazines, .ffc-clone or business websites. Its templates cater to various blog styles, .ffc-clone from text-focused to image-heavy layouts. Additionally, .ffc-clone it supports international typography and diverse color palettes, .ffc-clone ensuring accessibility and customization for users worldwide.
+Requires at least: 6.7
+Tested up to: 6.8
+Requires PHP: 7.2
+Version: 1.3
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentytwentyfive
+Tags: one-column, .ffc-clone custom-colors, .ffc-clone custom-menu, .ffc-clone custom-logo, .ffc-clone editor-style, .ffc-clone featured-images, .ffc-clone full-site-editing, .ffc-clone block-patterns, .ffc-clone rtl-language-support, .ffc-clone sticky-post, .ffc-clone threaded-comments, .ffc-clone translation-ready, .ffc-clone wide-blocks, .ffc-clone block-styles, .ffc-clone style-variations, .ffc-clone accessibility-ready, .ffc-clone blog, .ffc-clone portfolio, .ffc-clone news
+*/
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 1px !important;
+	text-underline-offset: .1em;
+}
+
+.ffc-clone /* Focus styles */
+:where(.wp-site-blocks *:focus) {
+	outline-width: 2px;
+	outline-style: solid;
+}
+
+.ffc-clone /* Increase the bottom margin on submenus, .ffc-clone so that the outline is visible. */
+.wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child) {
+	margin-bottom: 3px;
+}
+
+.ffc-clone /* Increase the outline offset on the parent menu items, .ffc-clone so that the outline does not touch the text. */
+.wp-block-navigation .wp-block-navigation-item .wp-block-navigation-item__content {
+	outline-offset: 4px;
+}
+
+.ffc-clone /* Remove outline offset from the submenus, .ffc-clone otherwise the outline is visible outside the submenu container. */
+.wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	outline-offset: 0;
+}
+
+.ffc-clone /*
+ * Progressive enhancement to reduce widows and orphans
+ * https://github.com/WordPress/gutenberg/issues/55190
+ */
+h1, .ffc-clone h2, .ffc-clone h3, .ffc-clone h4, .ffc-clone h5, .ffc-clone h6, .ffc-clone blockquote, .ffc-clone caption, .ffc-clone figcaption, .ffc-clone p ,
+
+.ffc-clone /*
+ * Progressive enhancement to reduce widows and orphans
+ * https://github.com/WordPress/gutenberg/issues/55190
+ */
+.ffc-h1, .ffc-clone .ffc-h2, .ffc-clone .ffc-h3, .ffc-clone .ffc-h4, .ffc-clone .ffc-h5, .ffc-clone .ffc-h6{
+	text-wrap: pretty;
+}
+
+.ffc-clone /*
+ * Change the position of the more block on the front, .ffc-clone by making it a block level element.
+ * https://github.com/WordPress/gutenberg/issues/65934
+*/
+.more-link {
+	display: block;
+}

@@ -161,7 +161,7 @@ See [TESTING.md](./TESTING.md) for the full testing guide.
 
 ## Deployment
 
-- **Live Site**: [https://ffcworkingsite1.org](https://ffcworkingsite1.org)
+- **Live Site**: [https://freeforcharity.github.io/FFC-EX-tamkeensports.org/](https://freeforcharity.github.io/FFC-EX-tamkeensports.org/) until the `tamkeensports.org` cutover
 - **GitHub Pages**: Automated via GitHub Actions on push to `main`
 - **Static export**: `output: 'export'` in `next.config.ts`
 

@@ -152,60 +152,67 @@ export type SiteConfig = {
   parentOrg?: { name: string; url: string; hubUrl: string }
 }
 
+// Every value below comes from the charity's own live site as captured by
+// workflow 706 on 2026-10-02 (about page, home page, contact page footer),
+// never guessed: the EIN and 501(c)(3) wording are what tamkeensports.org
+// publishes in its own footer, and the IRS Business Master File (via
+// ProPublica's Nonprofit Explorer) lists EIN 33-4484936 as "Tamkeen Sports",
+// subsection 501(c)(3), ruling date 2025-05-01, Lombard, IL. That is what
+// justifies the Level 2 footer (EIN + Candid link + status line). The only
+// address the charity publishes is that registered city, so the single
+// address entry carries no street.
 export const siteConfig: SiteConfig = {
-  name: 'Free For Charity',
-  tagline: 'Reduce Costs, Increase Impact',
+  name: 'Tamkeen Sports',
+  tagline: 'Fueling dreams through empowerment',
   mission:
-    'Free For Charity connects students, professionals, and businesses with nonprofits to reduce costs and increase revenues.',
+    'Tamkeen Sports creates private, women-only sports events where women can stay active, build community, and compete in an environment that respects modesty and personal values.',
   // Empty = the footer's Donate / Volunteer links email contactEmail instead.
   donationUrl: '',
   volunteerUrl: '',
   description:
-    'Free For Charity connects students, professionals, and businesses with nonprofits to reduce costs and increase revenues—putting more resources back into their missions.',
+    'Tamkeen Sports is a nonprofit organization dedicated to women-only sports events for women and girls. We provide a welcoming space where women can stay active, connect with others, and support meaningful causes.',
   shortDescription:
-    'Connecting students, professionals, and businesses with nonprofits to reduce costs and increase revenues.',
-  url: 'https://ffcworkingsite1.org',
-  twitterHandle: '@freeforcharity',
-  contactEmail: 'clarkemoyer@freeforcharity.org',
+    'Women-only sports events where women can stay active, build community, and support meaningful causes.',
+  // No public/CNAME yet: the site is served on the default GitHub Pages
+  // origin until the DNS cutover, and check-drift requires the config to say
+  // so. Switch to https://tamkeensports.org in the same PR that adds the CNAME.
+  url: 'https://freeforcharity.github.io',
+  twitterHandle: '',
+  contactEmail: 'info@tamkeensports.org',
   keywords: [
     'nonprofit',
-    'charity',
-    'volunteer',
-    'donate',
-    'free hosting',
-    'domains',
-    'Microsoft 365',
+    'women-only sports',
+    'Muslim women',
+    'basketball',
+    'volleyball',
+    'badminton',
+    'pickleball',
+    'Chicago',
+    'Dallas',
   ],
   themeColor: '#ffffff',
   vulnerabilityDisclosurePath: '/vulnerability-disclosure-policy',
   social: [
-    { label: 'Facebook', href: 'https://www.facebook.com/freeforcharity' },
-    { label: 'X (Twitter)', href: 'https://x.com/freeforcharity1' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/freeforcharity/' },
-    // Repo name uses underscores — the hyphenated variant 404s.
-    { label: 'GitHub', href: 'https://github.com/FreeForCharity/FFC-IN-Footer_Only_Template' },
+    { label: 'Instagram', href: 'https://instagram.com/tamkeensports' },
+    { label: 'TikTok', href: 'https://tiktok.com/tamkeensports' },
   ],
-  ein: '46-2471893',
-  phone: { display: '(520) 222-8104', tel: '5202228104' },
+  ein: '33-4484936',
+  phone: { display: '', tel: '' },
   addresses: [
     {
-      label: 'Main Address',
-      lines: ['4030 Wake Forrest Road', 'Suite 349 Raleigh North', 'Carolina 27609'],
-      mapUrl:
-        'https://www.google.com/maps/search/?api=1&query=4030+Wake+Forrest+Road+Suite+349+Raleigh+NC+27609',
-    },
-    {
-      label: 'PA Office Address',
-      lines: ['301 Science Park Road Suite', '119 State College PA 16803'],
-      mapUrl:
-        'https://www.google.com/maps/place/Free+For+Charity/@40.7768455,-77.8963305,17z/data=!3m1!4b1!4m6!3m5!1s0x89cea944b44a2e01:0x6fc2d6bf09e00a0f!8m2!3d40.7768415!4d-77.8937556!16s%2Fg%2F11vzvbl2d7?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D',
+      label: 'Registered Address',
+      lines: ['Lombard, Illinois'],
+      mapUrl: 'https://www.google.com/maps/search/?api=1&query=Lombard+IL',
     },
   ],
-  taxStatusLabel: 'a US 501c3 Non Profit',
+  taxStatusLabel: 'a registered 501(c)(3) nonprofit organization',
+  // Candid/GuideStar profiles are addressed by EIN. The shared SiteConfig
+  // schema has no "no profile yet" spelling for these two, so the same EIN
+  // profile URL fills both; replace directProfileUrl with the profile's shared
+  // link once the charity claims its Candid profile.
   guidestar: {
-    profileUrl: 'https://www.guidestar.org/profile/46-2471893',
-    directProfileUrl:
-      'https://www.guidestar.org/profile/shared/bbbe173a-87b9-4af9-a8a2-cae255a95742',
+    profileUrl: 'https://www.guidestar.org/profile/33-4484936',
+    directProfileUrl: 'https://www.guidestar.org/profile/33-4484936',
   },
   supportedBy: {
     name: 'Free For Charity',

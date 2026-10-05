@@ -39,31 +39,28 @@ test.describe('Footer Social Links', () => {
       'No social links are enabled for this site; the disabled-icon case is asserted below.'
     )
 
+    // This site's social links live in the captured page's own footer (a
+    // WordPress social-links block, whose accessible name is a screen-reader
+    // span), not in the FFC attribution <footer>, which renders no icons. So
+    // they are located page-wide by destination and checked for an accessible
+    // name that names the platform.
     for (const social of testConfig.socialLinks) {
-      const link = page.locator(`footer a[href*="${social.url}"]`)
+      const link = page.locator(`a[href*="${social.url}"]`).first()
       await expect(link).toBeVisible()
-      await expect(link).toHaveAttribute('aria-label', social.ariaLabel)
+      await expect(link).toHaveAccessibleName(new RegExp(social.ariaLabel, 'i'))
     }
   })
 
   test('should render exactly the configured social icons', async ({ page }) => {
     await page.goto('/')
 
-    // Every label the config declares, enabled or not. Checking the full set
-    // means a disabled platform that still renders an icon fails here, and it
-    // keeps the selector non-empty when nothing is enabled — joining an empty
-    // list produced '', which is not a valid selector.
-    const selector = testConfig.allSocialLabels
-      .map((label) => `footer a[aria-label="${label}"]`)
-      .join(', ')
-
-    if (selector === '') {
-      // No social platforms configured at all: there is nothing to render and
-      // nothing to select.
-      await expect(page.locator('footer a[target="_blank"][aria-label]')).toHaveCount(0)
-      return
+    // Every platform the config declares, enabled or not, must appear exactly
+    // when it is enabled: an enabled platform with no link on the page, or a
+    // disabled one that still links out, both fail here.
+    const enabled = new Set(testConfig.socialLinks.map((social) => social.ariaLabel))
+    for (const label of testConfig.allSocialLabels) {
+      const links = page.getByRole('link', { name: new RegExp(`^${label}$`, 'i') })
+      await expect(links).toHaveCount(enabled.has(label) ? 1 : 0)
     }
-
-    await expect(page.locator(selector)).toHaveCount(testConfig.socialLinks.length)
   })
 })
