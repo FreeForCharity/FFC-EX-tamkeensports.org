@@ -177,7 +177,7 @@ export const siteConfig: SiteConfig = {
   // the custom domain with no base path; check-drift requires the two to agree.
   url: 'https://tamkeensports.org',
   twitterHandle: '',
-  contactEmail: 'info@tamkeensports.org',
+  contactEmail: 'tamkeenchicago@gmail.com',
   keywords: [
     'nonprofit',
     'women-only sports',
