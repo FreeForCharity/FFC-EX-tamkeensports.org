@@ -13,7 +13,7 @@
 # an address no host serves. scripts/check-drift.mjs reads the same signal and
 # fails if these lines and public/CNAME get out of step.
 
-Contact: mailto:info@tamkeensports.org
+Contact: mailto:tamkeenchicago@gmail.com
 Expires: 2027-12-31T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://freeforcharity.github.io/FFC-EX-tamkeensports.org/.well-known/security.txt
